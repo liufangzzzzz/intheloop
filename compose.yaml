@@ -1,0 +1,10 @@
+services:
+  site:
+    image: ${ITL_REGISTRY:-ghcr.io/geekpark-hub/intheloop}/frontend:${ITL_IMAGE_TAG:-latest}
+    # build: .
+    restart: unless-stopped
+    environment:
+      ITL_PUBLIC_ORIGIN: ${ITL_PUBLIC_ORIGIN:-https://intheloop.geekpark.net}
+      INTHELOOP_CONTENT_API_ORIGIN: ${INTHELOOP_CONTENT_API_ORIGIN:-https://toolkit-intheloop.geekpark.net}
+    ports:
+      - "127.0.0.1:${ITL_PORT:-3001}:3000"
