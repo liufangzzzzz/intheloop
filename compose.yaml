@@ -1,6 +1,6 @@
 services:
   site:
-    image: ${ITL_REGISTRY:-ghcr.io/geekpark-hub/intheloop}/frontend:${ITL_IMAGE_TAG:-latest}
+    image: ${ITL_REGISTRY:-crpi-sf6d3yw2nfnffiwh.cn-beijing.personal.cr.aliyuncs.com/geekpark-test}/intheloop:${ITL_IMAGE_TAG:-latest}
     # build: .
     restart: unless-stopped
     environment:
