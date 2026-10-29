@@ -17,7 +17,7 @@ export default function Orbit({tags,locale}:{tags:Tag[];locale:Locale}){
   const tick=(time:number)=>{const elapsed=last?Math.min(time-last,60):0;last=time;if(elapsed)setRotation(r=>({x:r.x+elapsed*.000012,y:r.y+elapsed*.000042}));frame=requestAnimationFrame(tick)};
   frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame);
  },[paused,dragging]);
- const nodes=tags.filter(t=>t.map_visible!==false);
+ const nodes=tags.filter(t=>t.map_visible!==false&&(t.tag_type==='technical_topic'||t.tag_type==='entity'||t.tag_type==='topic'||t.tag_type==='company'||t.tag_type==='product'));
  const leaves:Point[]=nodes.map(t=>{const primary=t.map_level==='primary',pool=nodes.filter(n=>(n.map_level==='primary')===primary),index=pool.findIndex(n=>n.id===t.id),y=1-2*(index+.5)/Math.max(pool.length,1),r=Math.sqrt(1-y*y),a=index*2.399963+(primary?.4:1.8);return{x:Math.cos(a)*r,y,z:Math.sin(a)*r,title:zh?t.name_zh:t.name_en||t.name_zh,href:`/${locale}?tag=${t.slug}`,group:t.map_level==='primary',medium:t.map_level==='medium'}});
  const mobile=size.w<=650;
  const points=leaves.map(p=>{
