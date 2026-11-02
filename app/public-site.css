@@ -55,7 +55,6 @@
  .site-tools{gap:3px}
  .public-site .site-masthead{padding-left:14px;padding-right:14px}
 }
-
 .social-qr{position:relative}
 .social-qr>summary{list-style:none}
 .social-qr>summary::-webkit-details-marker{display:none}
@@ -64,9 +63,26 @@
 .social-qr-card strong{font-size:16px;font-weight:600;margin-bottom:15px}
 .social-qr-card small{font-size:11px;color:#746d76;margin-top:12px}
 .social-qr-card .wechat-qr{display:block;width:244px;height:244px;object-fit:contain}
+.social-qr-card .community-qr{display:block;width:244px;height:244px;object-fit:contain}
 .xiaohongshu-qr{position:relative;width:244px;height:224px;overflow:hidden;background:#fff}
 .xiaohongshu-qr img{position:absolute;width:600px;height:auto;max-width:none;left:-178px;top:-202px}
-@media(max-width:650px){.social-qr-card{top:76px;width:280px;padding:18px}.social-qr-card .wechat-qr{width:236px;height:236px}.xiaohongshu-qr{width:236px;height:224px}.xiaohongshu-qr img{left:-182px;top:-202px}}
+@media(max-width:650px){.social-qr-card{top:76px;width:280px;padding:18px}.social-qr-card .wechat-qr,.social-qr-card .community-qr{width:236px;height:236px}.xiaohongshu-qr{width:236px;height:224px}.xiaohongshu-qr img{left:-182px;top:-202px}}
+
+.podcast-hub-intro{position:relative;display:grid;grid-template-columns:148px minmax(0,1fr) 122px;align-items:center;gap:26px;margin:0 0 60px;padding:22px;border:1px solid var(--site-rule);overflow:hidden}
+.podcast-cover{display:block;width:148px;height:148px;object-fit:cover}
+.podcast-hub-copy>p{margin:0 0 10px;font:600 9px Figtree,sans-serif;letter-spacing:.16em;opacity:.58}
+.podcast-hub-copy h2{margin:0 0 12px;font:400 30px/1.25 Newsreader,SourceHanSerifSC,serif}
+.podcast-hub-copy>span{display:block;max-width:390px;font-size:14px;opacity:.68}
+.podcast-hub-copy>a{display:inline-block;margin-top:22px;font:600 11px Figtree,sans-serif;letter-spacing:.05em;border-bottom:1px solid currentColor}
+.podcast-hub-qr{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.podcast-hub-qr img{display:block;width:112px;height:112px;object-fit:contain;background:#fff}
+.podcast-hub-qr small{font:9px Figtree,SourceHanSans,sans-serif;line-height:1.4;opacity:.58}
+.podcast-list-heading{margin:0 0 20px;font:400 24px/1.3 Newsreader,SourceHanSerifSC,serif}
+.edition-zh .podcast-hub-intro{border:2px solid transparent;border-radius:22px;background:linear-gradient(#09090b,#09090b) padding-box,linear-gradient(105deg,var(--lover-cyan),var(--lover-violet) 27%,var(--lover-pink) 53%,var(--lover-orange) 77%,var(--lover-yellow)) border-box;color:#fff;box-shadow:0 18px 55px rgba(20,18,22,.12)}
+.edition-zh .podcast-hub-copy h2,.edition-zh .podcast-list-heading{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400}
+.edition-zh .podcast-hub-qr img{border-radius:8px}
+.edition-en .podcast-hub-intro{background:#f4f4f5}
+@media(max-width:650px){.podcast-hub-intro{grid-template-columns:88px minmax(0,1fr);gap:17px;padding:16px;margin-bottom:44px}.podcast-cover{width:88px;height:88px}.podcast-hub-copy h2{font-size:22px}.podcast-hub-copy>span{font-size:12px}.podcast-hub-copy>a{margin-top:13px}.podcast-hub-qr{grid-column:1/3;flex-direction:row;justify-content:flex-start;padding-top:14px;border-top:1px solid rgba(127,127,127,.22)}.podcast-hub-qr img{width:78px;height:78px}.podcast-hub-qr small{text-align:left}.podcast-list-heading{font-size:21px}}
 
 /* Chinese home: a compact editorial map followed immediately by the feed. */
 .public-site.edition-zh{background:radial-gradient(52% 520px at 4% 90px,rgba(96,217,255,.38),transparent 72%),radial-gradient(48% 520px at 96% 105px,rgba(253,255,101,.44),transparent 72%),radial-gradient(55% 600px at 53% 355px,rgba(255,144,237,.28),transparent 72%),linear-gradient(180deg,#fffdf9 0,#fff8fc 540px,#fffdf9 920px)}
@@ -87,7 +103,7 @@
 .feed-filters{display:flex;align-items:center;gap:28px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
 .feed-filters::-webkit-scrollbar{display:none}
 .feed-filters a{position:relative;padding:16px 0 18px;font-size:13px;color:#67606a;text-decoration:none}
-.feed-filters a small{display:block;font-size:9px;line-height:1.1;font-weight:400;letter-spacing:.04em}.feed-filters a strong{font-weight:500}.podcast-link{font-size:12px;letter-spacing:.04em;border-left:1px solid var(--site-rule);padding-left:12px}
+.feed-filters a small{display:block;font-size:9px;line-height:1.1;font-weight:400;letter-spacing:.04em}.feed-filters a strong{font-weight:500}.podcast-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;overflow:hidden;opacity:.78;transition:opacity .18s ease,transform .18s ease}.podcast-icon img{display:block;width:100%;height:100%;object-fit:cover}.podcast-icon:hover{opacity:1;transform:translateY(-1px);text-decoration:none}
 .feed-filters a:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
 .feed-filters a:hover,.feed-filters a.active{color:#17151b;text-decoration:none}
 .feed-filters a.active:after{background:#7568ee}
@@ -112,3 +128,206 @@
 .entry-tags{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:14px;font-size:12px;opacity:.72}.entry-tags a{border-bottom:1px solid var(--site-rule)}
 .affiliation-list{border-top:1px solid var(--site-rule)}.affiliation-list>div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--site-rule)}.affiliation-list span{font-size:13px;opacity:.7;text-align:right}
 .product-dates{display:flex;flex-wrap:wrap;gap:10px 26px;margin:-18px 0 34px;font:12px/1.4 var(--font-sans);letter-spacing:.04em}.product-dates span{display:flex;gap:8px}.product-dates strong{font-weight:600;text-transform:uppercase;opacity:.55}
+
+/* Chinese edition: Source Han Serif gives the editorial voice, while the
+   Lover palette stays present as light and rhythm instead of heavy panels. */
+@font-face{font-family:SourceHanSerifSC;src:url('/fonts/SourceHanSerifSC-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+.public-site.edition-zh{
+ --lover-cyan:#60d9ff;--lover-violet:#a583ff;--lover-pink:#ff90ed;--lover-orange:#ffa551;--lover-yellow:#fdff65;
+ --site-ink:#29232e;--site-rule:rgba(54,39,57,.14);
+ color:var(--site-ink);
+ font-family:Figtree,SourceHanSans,"PingFang SC",sans-serif;
+ background:
+  radial-gradient(46% 430px at -4% 115px,rgba(96,217,255,.46),transparent 72%),
+  radial-gradient(42% 420px at 103% 95px,rgba(253,255,101,.54),transparent 72%),
+  radial-gradient(36% 430px at 78% 330px,rgba(255,165,81,.26),transparent 74%),
+  radial-gradient(43% 500px at 48% 285px,rgba(255,144,237,.28),transparent 73%),
+  radial-gradient(38% 460px at 24% 390px,rgba(165,131,255,.27),transparent 74%),
+  linear-gradient(180deg,#fffdf9 0,#fff9fd 520px,#fffdf9 980px);
+}
+.edition-zh .site-masthead{height:86px;padding:12px 4.5vw;background:linear-gradient(90deg,rgba(255,255,255,.15),rgba(255,255,255,.32) 48%,rgba(255,255,255,.12));border:0;backdrop-filter:blur(16px)}
+.edition-zh .site-signature strong{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:clamp(21px,1.65vw,27px);font-weight:400;letter-spacing:.04em}
+.edition-zh .social-placeholder{border-color:rgba(54,39,57,.18);background:rgba(255,255,255,.25);color:#38303e;opacity:.9}
+.edition-zh .social-placeholder:hover,.edition-zh .social-qr[open]>summary{background:rgba(255,255,255,.66);text-decoration:none}
+.edition-zh .podcast-icon{box-shadow:0 0 0 1px rgba(54,39,57,.12)}
+.community-placeholder{cursor:default}.community-placeholder svg{width:16px;height:16px}
+.edition-zh .locale-link{font-size:12px;letter-spacing:.08em;color:#514858}
+
+.edition-zh .map-hero{position:relative;height:370px;margin:0 4vw;isolation:isolate;overflow:hidden}
+.edition-zh .map-hero:before{content:'';position:absolute;z-index:-1;inset:18px 2.5vw 8px;border-radius:52% 48% 54% 46%/44% 56% 48% 52%;background:linear-gradient(118deg,rgba(96,217,255,.2),rgba(165,131,255,.18) 30%,rgba(255,144,237,.21) 58%,rgba(255,165,81,.19) 78%,rgba(253,255,101,.22));filter:blur(8px)}
+.edition-zh .map-hero:after{content:'';position:absolute;z-index:-1;left:12%;right:12%;bottom:16px;height:1px;background:linear-gradient(90deg,transparent,var(--lover-cyan),var(--lover-violet),var(--lover-pink),var(--lover-orange),var(--lover-yellow),transparent);opacity:.68}
+.edition-zh .map-hero .sphere{width:min(980px,94vw);min-height:0}
+.edition-zh .map-node{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400;color:#342b39;text-shadow:0 1px 18px rgba(255,255,255,.82)}
+.edition-zh .map-node.leaf{font-size:15px}.edition-zh .map-node.medium{font-size:20px}.edition-zh .map-node.group{font-size:26px;font-weight:400;letter-spacing:.04em}
+.edition-zh .map-wordmark{padding:20px 34px;background:radial-gradient(ellipse,rgba(255,255,255,.72),rgba(255,255,255,.2) 55%,transparent 73%)}
+.edition-zh .map-wordmark strong{font-size:70px;font-weight:400;color:#211d25}
+.edition-zh .map-wordmark span{font-family:Figtree,sans-serif;font-size:10px;color:#514858}
+.edition-zh .map-caption{height:44px;color:#625969;font:11px Figtree,SourceHanSans,sans-serif;letter-spacing:.04em}
+.edition-zh .map-caption button{color:#625969}
+
+.edition-zh .home-timeline{position:relative;padding:48px 5vw 110px;border:0;background:linear-gradient(180deg,rgba(255,253,249,.22),rgba(255,253,249,.72) 150px,rgba(255,253,249,.94) 520px)}
+.edition-zh .home-timeline:before{display:block;content:'';position:absolute;inset:0 5vw auto;height:1px;background:rgba(54,39,57,.12)}
+.edition-zh .editorial-feed{max-width:1080px}
+.edition-zh .feed-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:36px;border:0;margin-bottom:9px}
+.edition-zh .editorial-feed .feed-heading h1{margin:0;padding:0 0 17px;font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:36px;font-weight:400;letter-spacing:.06em;line-height:1}
+.edition-zh .feed-filters{gap:30px;border:0}
+.edition-zh .feed-filters a{padding:18px 0 17px;color:#706774;font-size:12px}
+.edition-zh .feed-filters a strong{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:14px;font-weight:400;letter-spacing:.04em}
+.edition-zh .feed-filters a:after{height:3px;border-radius:3px;background:transparent}
+.edition-zh .feed-filters a:nth-child(1).active:after{background:var(--lover-cyan)}
+.edition-zh .feed-filters a:nth-child(2).active:after{background:var(--lover-violet)}
+.edition-zh .feed-filters a:nth-child(3).active:after{background:var(--lover-pink)}
+.edition-zh .feed-filters a:nth-child(4).active:after{background:var(--lover-orange)}
+.edition-zh .feed-filters a:hover,.edition-zh .feed-filters a.active{color:#29232e}
+.edition-zh .timeline{border-top:1px solid rgba(54,39,57,.14)}
+.edition-zh .timeline-entry{position:relative;padding:33px 8px 34px 0;border-bottom:1px solid rgba(54,39,57,.12);transition:padding .22s ease,background .22s ease}
+.edition-zh .timeline-entry:first-child{border-top:0}
+.edition-zh .timeline-entry:before{content:'';position:absolute;left:-18px;top:42px;width:6px;height:6px;border-radius:50%;background:var(--lover-violet);opacity:0;transition:opacity .22s ease}
+.edition-zh .timeline-entry:nth-child(5n+1):before{background:var(--lover-cyan)}
+.edition-zh .timeline-entry:nth-child(5n+2):before{background:var(--lover-violet)}
+.edition-zh .timeline-entry:nth-child(5n+3):before{background:var(--lover-pink)}
+.edition-zh .timeline-entry:nth-child(5n+4):before{background:var(--lover-orange)}
+.edition-zh .timeline-entry:nth-child(5n):before{background:var(--lover-yellow);box-shadow:0 0 0 1px rgba(54,39,57,.13)}
+.edition-zh .timeline-entry:hover{padding-left:12px;background:linear-gradient(90deg,rgba(255,255,255,.3),transparent 75%)}
+.edition-zh .timeline-entry:hover:before{opacity:1}
+.edition-zh .entry-meta{font-family:Figtree,SourceHanSans,sans-serif;font-size:10px;letter-spacing:.08em;color:#786f7c;opacity:1}
+.edition-zh .entry-title h2{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:25px;font-weight:400;letter-spacing:.025em;line-height:1.5;color:#29232e}
+.edition-zh .entry-title>a:last-child{color:#817686;font-weight:300}
+.edition-zh .timeline-entry>p{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:15px;line-height:1.9;color:#6c626f;opacity:1}
+.edition-zh .entry-tags{font-family:Figtree,SourceHanSans,sans-serif;font-size:10px;color:#786f7c;opacity:1}
+
+.public-site.edition-zh.content-page{background:
+ radial-gradient(44% 440px at 2% 80px,rgba(96,217,255,.28),transparent 72%),
+ radial-gradient(42% 450px at 98% 100px,rgba(253,255,101,.36),transparent 72%),
+ radial-gradient(48% 600px at 68% 420px,rgba(255,144,237,.16),transparent 75%),
+ linear-gradient(180deg,#fffdf9,#fff9fd 560px,#fffdf9)}
+.edition-zh .simple-page{width:min(900px,100%);padding-top:64px}
+.edition-zh .simple-page h1{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400;font-size:clamp(38px,5vw,62px);letter-spacing:.035em;line-height:1.35}
+.edition-zh .breadcrumbs,.edition-zh .resource-links,.edition-zh .article-tags{font-family:Figtree,SourceHanSans,sans-serif;color:#6d6371}
+.edition-zh .topic-deck,.edition-zh .article-summary,.edition-zh .article-body,.edition-zh .article-reading-hint p{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400}
+.edition-zh .article-body{font-size:18px;line-height:2;color:#342d38}
+.edition-zh .article-summary{color:#6c626f;opacity:1}
+.edition-zh .article-reading-hint{border:0;border-left:3px solid var(--lover-violet);background:linear-gradient(100deg,rgba(165,131,255,.1),rgba(255,144,237,.06),transparent)}
+.edition-zh .article-tags a{border-color:rgba(54,39,57,.14);background:rgba(255,255,255,.28)}
+.edition-zh .publisher-footer{border-top-color:rgba(54,39,57,.1);background:rgba(255,253,249,.68);color:#655c69}
+
+@media(max-width:760px){
+ .edition-zh .site-masthead{height:76px;padding:9px 16px}.edition-zh .site-signature strong{font-size:19px}
+ .edition-zh .map-hero{height:335px;margin:0 10px}.edition-zh .map-hero:before{inset:14px 0 8px}
+ .edition-zh .map-node.leaf{font-size:12px}.edition-zh .map-node.medium{font-size:16px}.edition-zh .map-node.group{font-size:20px}
+ .edition-zh .map-wordmark strong{font-size:58px}
+ .edition-zh .home-timeline{padding:39px 20px 80px}.edition-zh .home-timeline:before{inset:0 20px auto}
+ .edition-zh .feed-heading{display:block;margin-bottom:0}.edition-zh .editorial-feed .feed-heading h1{font-size:30px;padding-bottom:15px}
+ .edition-zh .feed-filters{gap:23px;margin-right:-20px}.edition-zh .feed-filters a{padding:10px 0 15px}
+ .edition-zh .timeline-entry{padding:27px 0}.edition-zh .timeline-entry:hover{padding-left:0;background:transparent}.edition-zh .timeline-entry:before{display:none}
+ .edition-zh .entry-title h2{font-size:21px;line-height:1.58}.edition-zh .timeline-entry>p{font-size:14px;line-height:1.85}
+ .edition-zh .simple-page{padding-top:42px}.edition-zh .simple-page h1{font-size:36px}.edition-zh .article-body{font-size:17px;line-height:1.95}
+}
+
+/* Chinese home is the live desk: stronger colour, crisper map labels and a
+   larger rolling-news heading. English keeps its quieter editorial system. */
+.edition-zh .site-masthead:before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--lover-cyan),var(--lover-violet) 27%,var(--lover-pink) 54%,var(--lover-orange) 78%,var(--lover-yellow))}
+.edition-zh .map-hero{height:405px;margin:0;background:
+ radial-gradient(circle at 8% 20%,rgba(96,217,255,.72),transparent 30%),
+ radial-gradient(circle at 31% 78%,rgba(165,131,255,.52),transparent 37%),
+ radial-gradient(circle at 57% 25%,rgba(255,144,237,.55),transparent 38%),
+ radial-gradient(circle at 83% 74%,rgba(255,165,81,.56),transparent 36%),
+ radial-gradient(circle at 101% 14%,rgba(253,255,101,.76),transparent 34%),
+ linear-gradient(118deg,#f8fcff,#fff7fd 58%,#fffce7)}
+.edition-zh .map-hero:before{inset:0;border-radius:0;background:linear-gradient(112deg,rgba(255,255,255,.02),rgba(255,255,255,.2) 49%,rgba(255,255,255,.02));filter:none}
+.edition-zh .map-hero:after{inset:0;height:auto;left:0;right:0;bottom:0;background:repeating-linear-gradient(112deg,transparent 0,transparent 78px,rgba(51,35,55,.16) 79px,transparent 80px);opacity:.14;pointer-events:none}
+.edition-zh .map-hero .space-map{z-index:1}
+.edition-zh .map-hero .sphere{width:min(1040px,96vw)}
+.edition-zh .map-ambient .map-node{filter:blur(.08px)!important}
+.edition-zh .map-node{color:#28202d;text-shadow:0 1px 16px rgba(255,255,255,.88)}
+.edition-zh .map-node.group{font-size:28px}.edition-zh .map-node.medium{font-size:21px}
+.edition-zh .map-wordmark{background:radial-gradient(ellipse,rgba(255,255,255,.82),rgba(255,255,255,.28) 54%,transparent 72%)}
+.edition-zh .map-wordmark strong{font-size:76px}
+.edition-zh .map-caption{position:relative;z-index:3;color:#413747;font-weight:500}
+
+.edition-zh .home-timeline{padding-top:54px;background:linear-gradient(180deg,rgba(255,252,248,.97),rgba(255,250,253,.98) 45%,#fffdf9)}
+.edition-zh .home-timeline:before{inset:0 0 auto;height:6px;background:linear-gradient(90deg,var(--lover-cyan),var(--lover-violet) 27%,var(--lover-pink) 54%,var(--lover-orange) 78%,var(--lover-yellow));opacity:1}
+.edition-zh .feed-heading{align-items:center;margin-bottom:0;border-bottom:1px solid rgba(54,39,57,.17)}
+.edition-zh .editorial-feed .feed-heading h1{padding:0 0 25px;font-size:clamp(46px,5.2vw,70px);letter-spacing:.02em;line-height:1}
+.edition-zh .feed-filters{align-self:stretch;gap:38px}
+.edition-zh .feed-filters a{display:flex;flex-direction:column;justify-content:flex-end;min-width:92px;padding:11px 0 24px}
+.edition-zh .feed-filters a:before{content:'';width:8px;height:8px;margin-bottom:12px;border-radius:50%;background:var(--lover-pink)}
+.edition-zh .feed-filters a:nth-child(2):before{background:var(--lover-orange)}
+.edition-zh .feed-filters a strong{font-size:16px;color:#3d3441}
+.edition-zh .feed-filters a small{margin-top:3px;color:#857b88}
+.edition-zh .feed-filters a:after{height:4px}
+.edition-zh .feed-filters a:nth-child(1).active:after{background:var(--lover-pink)}
+.edition-zh .feed-filters a:nth-child(2).active:after{background:var(--lover-orange)}
+.edition-zh .timeline{border-top:0}
+.edition-zh .timeline-empty{min-height:160px;padding:38px 0;border-top:0;color:#716775;font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:16px}
+.edition-zh .timeline-entry{grid-template-columns:124px minmax(0,1fr) 28px;padding-top:38px;padding-bottom:39px}
+.edition-zh .entry-title h2{font-size:27px;line-height:1.45}
+
+@media(max-width:760px){
+ .edition-zh .map-hero{height:350px}.edition-zh .map-hero:after{background:repeating-linear-gradient(112deg,transparent 0,transparent 46px,rgba(51,35,55,.14) 47px,transparent 48px)}
+ .edition-zh .map-node.group{font-size:21px}.edition-zh .map-node.medium{font-size:17px}.edition-zh .map-wordmark strong{font-size:60px}
+ .edition-zh .home-timeline{padding-top:42px}.edition-zh .feed-heading{align-items:flex-end}
+ .edition-zh .editorial-feed .feed-heading h1{font-size:41px;padding-bottom:19px}
+ .edition-zh .feed-filters{gap:22px;margin-right:0}.edition-zh .feed-filters a{min-width:78px;padding:8px 0 19px}.edition-zh .feed-filters a:before{width:6px;height:6px;margin-bottom:8px}.edition-zh .feed-filters a strong{font-size:14px}
+ .edition-zh .timeline-entry{grid-template-columns:1fr;padding:29px 0}.edition-zh .entry-title h2{font-size:22px}
+}
+@media(max-width:520px){
+ .edition-zh .feed-heading{display:block}.edition-zh .editorial-feed .feed-heading h1{font-size:44px;padding-bottom:22px}
+ .edition-zh .feed-filters{border-top:1px solid rgba(54,39,57,.12)}.edition-zh .feed-filters a{flex:1;min-width:112px;padding-top:16px}
+}
+
+/* Chinese home: a live black-and-white map surface. Lover colours are
+   reserved for the spectral frame, map states and editorial markers. */
+.edition-zh.map-home{position:relative;padding:12px 12px 0;background:#f5f5f2}
+.edition-zh.map-home:before{content:'';position:absolute;z-index:0;top:12px;left:12px;right:12px;height:530px;border:2px solid transparent;border-radius:30px;background:linear-gradient(#09090b,#09090b) padding-box,linear-gradient(105deg,var(--lover-cyan),var(--lover-violet) 27%,var(--lover-pink) 53%,var(--lover-orange) 77%,var(--lover-yellow)) border-box;box-shadow:0 24px 80px rgba(20,18,22,.18);pointer-events:none}
+.edition-zh.map-home .site-masthead{position:relative;z-index:3;height:86px;margin:2px 2px 0;padding:14px 22px;color:#fff;border:0;border-bottom:1px solid rgba(255,255,255,.13);border-radius:28px 28px 0 0;background:rgba(9,9,11,.96);backdrop-filter:none}
+.edition-zh.map-home .site-masthead:before{display:none}
+.edition-zh.map-home .official-logo{width:58px;height:58px}
+.edition-zh.map-home .site-signature strong{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-size:28px;font-weight:400;letter-spacing:.04em;color:#fff}
+.edition-zh.map-home .social-slots{gap:13px;margin-left:8px}
+.edition-zh.map-home .social-placeholder,.edition-zh.map-home .podcast-icon{width:25px;height:25px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#fff;opacity:.68}
+.edition-zh.map-home .podcast-icon{border-radius:50%}
+.edition-zh.map-home .social-placeholder.red-social{width:25px;border:0;border-radius:0;background:transparent;color:#fff;opacity:.68}
+.edition-zh.map-home .social-placeholder:hover,.edition-zh.map-home .social-qr[open]>summary,.edition-zh.map-home .podcast-icon:hover{background:transparent;opacity:1}
+.edition-zh.map-home .site-tools{gap:6px;padding:6px 10px;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:rgba(255,255,255,.055)}
+.edition-zh.map-home .search-menu summary{width:28px;height:28px}.edition-zh.map-home .locale-link{color:#fff}
+
+.edition-zh.map-home .map-hero{position:relative;z-index:1;height:440px;margin:0 2px 2px;overflow:hidden;border-radius:0 0 28px 28px;background:#09090b;color:#fff}
+.edition-zh.map-home .map-hero:before{content:'';position:absolute;z-index:0;inset:0;border-radius:0;background:radial-gradient(circle at 50% 46%,rgba(255,255,255,.06),transparent 29%);filter:none;pointer-events:none}
+.edition-zh.map-home .map-hero:after{content:'';position:absolute;z-index:0;inset:0;height:auto;background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent,black 19%,black 82%,transparent);opacity:1;pointer-events:none}
+.edition-zh.map-home .map-hero .space-map{position:relative;z-index:2}
+.edition-zh.map-home .map-hero .sphere{width:min(1040px,96vw)}
+.edition-zh.map-home .sphere:before,.edition-zh.map-home .sphere:after{content:'';position:absolute;z-index:0;left:50%;top:49%;width:54%;height:48%;border:1px solid rgba(255,255,255,.2);border-radius:50%;transform:translate(-50%,-50%) rotate(-10deg);pointer-events:none}
+.edition-zh.map-home .sphere:after{width:62%;height:34%;transform:translate(-50%,-50%) rotate(27deg)}
+.edition-zh.map-home .map-node{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400;color:#fff;text-shadow:0 0 22px rgba(255,255,255,.24)}
+.edition-zh.map-home .map-node:before{content:'';display:inline-block;width:5px;height:5px;margin:0 8px 3px 0;border-radius:50%;background:var(--lover-cyan);box-shadow:0 0 12px currentColor}
+.edition-zh.map-home .map-node:nth-of-type(5n+2):before{background:var(--lover-violet)}
+.edition-zh.map-home .map-node:nth-of-type(5n+3):before{background:var(--lover-pink)}
+.edition-zh.map-home .map-node:nth-of-type(5n+4):before{background:var(--lover-orange)}
+.edition-zh.map-home .map-node:nth-of-type(5n):before{background:var(--lover-yellow)}
+.edition-zh.map-home .map-wordmark{padding:18px 30px;background:radial-gradient(ellipse,rgba(255,255,255,.055),transparent 70%);opacity:.94}
+.edition-zh.map-home .map-wordmark span{font:500 9px Figtree,sans-serif;letter-spacing:.3em;color:rgba(255,255,255,.58)}
+.edition-zh.map-home .map-wordmark strong{font-family:Figtree,sans-serif;font-size:70px;font-weight:600;letter-spacing:-.08em;text-transform:uppercase;color:#fff}
+.edition-zh.map-home .map-caption{position:relative;z-index:3;height:42px;font:10px Figtree,SourceHanSans,sans-serif;letter-spacing:.08em;color:rgba(255,255,255,.6)}
+.edition-zh.map-home .map-caption button{color:#fff}
+
+.edition-zh.map-home .home-timeline{position:relative;z-index:2;margin:0 -12px;padding-top:40px;background:#f5f5f2}
+.edition-zh.map-home .home-timeline:before{height:0;background:none}
+.edition-zh.map-home .editorial-feed .feed-heading h1{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400;letter-spacing:.04em;color:#111}
+
+@media(max-width:760px){
+ .edition-zh.map-home{padding:7px 7px 0}
+ .edition-zh.map-home:before{top:7px;left:7px;right:7px;height:500px;border-radius:24px}
+ .edition-zh.map-home .site-masthead{height:80px;margin:2px 2px 0;padding:12px;border-radius:22px 22px 0 0}
+ .edition-zh.map-home .official-logo{width:54px;height:54px}
+ .edition-zh.map-home .site-signature strong{font-size:23px}
+ .edition-zh.map-home .social-slots{position:absolute;left:78px;top:57px;gap:9px;margin:0}
+ .edition-zh.map-home .social-placeholder,.edition-zh.map-home .podcast-icon,.edition-zh.map-home .social-placeholder.red-social{width:21px;height:21px}
+ .edition-zh.map-home .site-tools{gap:3px;padding:5px 7px}
+ .edition-zh.map-home .map-hero{height:416px;margin:0 2px 2px;border-radius:0 0 22px 22px}
+ .edition-zh.map-home .map-hero:after{background-size:48px 48px}
+ .edition-zh.map-home .sphere:before{width:74%;height:42%}.edition-zh.map-home .sphere:after{width:82%;height:31%}
+ .edition-zh.map-home .map-wordmark strong{font-size:54px}
+ .edition-zh.map-home .map-caption{height:38px;font-size:9px}
+ .edition-zh.map-home .home-timeline{margin:0 -7px;padding-top:34px}
+}
