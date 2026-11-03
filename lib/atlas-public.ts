@@ -49,10 +49,8 @@ export function sourceName(url:string, locale:Locale) {
 }
 
 export function brandName(content:Content,locale:Locale){
- const account=content.source_account;
- if(account){if(account.includes('极客公园'))return locale==='zh'?'极客公园':'GeekPark';if(account.includes('开始连接')||account.toLowerCase().includes('linkstart'))return locale==='zh'?'开始连接 LinkStart':'LinkStart';return account}
- const brand=content.brand||(content.kind==='podcast'?'linkstart':content.source_url.includes('geekpark.net')?'geekpark':'intheloop');
- return brand==='linkstart'?(locale==='zh'?'开始连接 LinkStart':'LinkStart'):brand==='geekpark'?(locale==='zh'?'极客公园':'GeekPark'):'In The Loop';
+ void content; void locale;
+ return 'In The Loop';
 }
 
 export function searchCatalogue(data:Catalogue,query:string,locale:Locale){
