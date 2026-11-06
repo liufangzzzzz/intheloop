@@ -206,6 +206,7 @@
 .edition-zh .breadcrumbs,.edition-zh .resource-links,.edition-zh .article-tags{font-family:Figtree,SourceHanSans,sans-serif;color:#6d6371}
 .edition-zh .topic-deck,.edition-zh .article-summary,.edition-zh .article-body,.edition-zh .article-reading-hint p{font-family:SourceHanSerifSC,"Songti SC",STSong,serif;font-weight:400}
 .edition-zh .article-body{font-size:18px;line-height:2;color:#342d38}
+.article-body-segment{white-space:pre-wrap}.article-body-segment .article-media{white-space:normal}
 .edition-zh .article-summary{color:#6c626f;opacity:1}
 .edition-zh .article-reading-hint{border:0;border-left:3px solid var(--lover-violet);background:linear-gradient(100deg,rgba(165,131,255,.1),rgba(255,144,237,.06),transparent)}
 .edition-zh .article-tags a{border-color:rgba(54,39,57,.14);background:rgba(255,255,255,.28)}

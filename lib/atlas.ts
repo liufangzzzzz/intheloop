@@ -72,6 +72,8 @@ export type MediaAsset = {
   url: string;
   alt?: string;
   caption?: string;
+  placement?: "unplaced" | "before_body" | "inline" | "after_body";
+  inline_offsets?: Partial<Record<Locale, number>>;
 };
 export type Content = {
   visibility?: "public" | "internal";
