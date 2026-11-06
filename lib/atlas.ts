@@ -67,6 +67,12 @@ export type Version = {
   platform?: string;
   links?: { label: string; url: string }[];
 };
+export type MediaAsset = {
+  type: "image" | "gif" | "video";
+  url: string;
+  alt?: string;
+  caption?: string;
+};
 export type Content = {
   visibility?: "public" | "internal";
   chinese_only?: boolean;
@@ -86,6 +92,7 @@ export type Content = {
   tag_ids: string[];
   ai_recommended_tag_ids?: string[];
   ai_suggested_tags?: string[];
+  media?: MediaAsset[];
   versions: Partial<Record<Locale, Version>>;
   publications?: {
     locale: Locale;
