@@ -21,12 +21,13 @@ export function featuredForTag(data:Catalogue,tagId:string){
 }
 
 export type EditorialView = 'featured' | 'conversations' | 'podcast' | 'overseas';
-export function editorialView(data: Catalogue, view?: string) {
+export function editorialView(data: Catalogue, view?: string, locale?: Locale) {
   const entries = timeline(data, {});
   if(view==='featured'){
     const byId=new Map(entries.map(c=>[c.id,c]));
     return (data.homepage_featured_ids||[]).map(id=>byId.get(id)).filter((c):c is Content=>!!c);
   }
+  if(view==='conversations'&&locale==='en')return entries.filter(content=>content.kind==='podcast'||content.tag_ids.includes('editorial:conversations'));
   const fixed:Record<string,string>={conversations:'editorial:conversations',podcast:'editorial:podcast',overseas:'editorial:overseas'};
   if (view && fixed[view]) return entries.filter(content => content.tag_ids.includes(fixed[view]));
   return entries;

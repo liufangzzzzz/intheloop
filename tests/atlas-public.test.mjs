@@ -29,6 +29,7 @@ test('home views keep Featured ordering and Conversations taxonomy separate',()=
  assert.deepEqual(editorialView(data,'featured').map(c=>c.id),['w','a']);
  assert.deepEqual(editorialView(data,'podcast').map(c=>c.id),['p']);
  assert.deepEqual(editorialView(data,'conversations').map(c=>c.id),['w']);
+ assert.deepEqual(editorialView(data,'conversations','en').map(c=>c.id),['p','w']);
 });
 
 test('topic pages include only directly tagged content, not descendants or related topics',()=>{
