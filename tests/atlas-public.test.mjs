@@ -20,7 +20,7 @@ test('Chinese original links and English hosted text have separate destinations'
  assert.deepEqual(contentTarget(c,'en'),{href:'/en?content=a',external:false});
 });
 
-test('home views keep Featured ordering and Conversations taxonomy separate',()=>{
+test('home views keep Featured ordering and include podcasts in Conversations',()=>{
  const data={tags:[],companies:[],homepage_featured_ids:['w','a'],contents:[
   {id:'a',date:'2026-01-03',tag_ids:['editorial:article'],company_ids:[],kind:'article',section:'reporting'},
   {id:'p',date:'2026-01-02',tag_ids:['editorial:podcast'],company_ids:[],kind:'podcast',section:'reporting'},
@@ -28,7 +28,7 @@ test('home views keep Featured ordering and Conversations taxonomy separate',()=
  ]};
  assert.deepEqual(editorialView(data,'featured').map(c=>c.id),['w','a']);
  assert.deepEqual(editorialView(data,'podcast').map(c=>c.id),['p']);
- assert.deepEqual(editorialView(data,'conversations').map(c=>c.id),['w']);
+ assert.deepEqual(editorialView(data,'conversations').map(c=>c.id),['p','w']);
  assert.deepEqual(editorialView(data,'conversations','en').map(c=>c.id),['p','w']);
 });
 
