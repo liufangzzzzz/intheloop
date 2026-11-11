@@ -20,7 +20,7 @@ function ArticleBody({body,items,locale,apiOrigin}:{body:string;items:MediaAsset
 export async function generateMetadata({params}:Props):Promise<Metadata>{const {locale}=await params;return{title:locale==='en'?'In The Loop — Embodied AI':'In The Loop · 具身智能',description:locale==='en'?'Writing and conversations on embodied AI.':'具身智能文章与对话。',metadataBase:new URL(process.env.ITL_PUBLIC_ORIGIN||'https://intheloop.geekpark.net'),icons:{icon:'/atlas-favicon.svg'},openGraph:{images:[]},twitter:{images:[]}}}
 export default async function PublicSite({params,searchParams}:Props){
  const {locale}=await params;if(locale!=='zh'&&locale!=='en')notFound();const l=locale as Locale,zh=l==='zh',q=await searchParams;
- let data:Catalogue={companies:[],tags:[],products:[],contents:[]},error=false;
+ let data:Catalogue={companies:[],tags:[],products:[],contents:[],specials:[]},error=false;
  const apiOrigin=(process.env.INTHELOOP_CONTENT_API_ORIGIN||'http://127.0.0.1:8000').replace(/\/$/,'');
  try{const r=await fetch(`${apiOrigin}/api/v1/public/atlas/${l}`,{cache:'no-store'});if(!r.ok)throw new Error();data=await r.json()}catch{error=true}
  const tag=data.tags.find(t=>t.slug===q.tag),group=mapGroups.find(g=>g.id===q.group),company=data.companies.find(c=>c.slug===q.company),article=data.contents.find(c=>c.id===q.content);

@@ -11,6 +11,7 @@ export type Tag = {
   released_date?: string;
   ended_date?: string;
   map_visible?: boolean;
+  special_slug?: string;
   parent_ids?: string[];
   related_tag_ids?: string[];
   featured_content_ids?: string[];
@@ -102,11 +103,19 @@ export type Content = {
     published_at: string;
   }[];
 };
+export type SpecialVersion = { title:string; description:string; html:string };
+export type SpecialPage = {
+  id:string; revision:number; slug:string; date:string; layout:"wrapped"|"standalone";
+  tag_ids:string[]; map_tag_id:string; english_enabled:boolean;
+  versions:Partial<Record<Locale,SpecialVersion>>;
+  published_at?:string;
+};
 export type Catalogue = {
   companies: Company[];
   tags: Tag[];
   products: Product[];
   contents: Content[];
+  specials: SpecialPage[];
   homepage_featured_ids?: string[];
 };
 export const dimensions: Record<string, string> = {
