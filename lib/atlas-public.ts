@@ -50,8 +50,13 @@ export function sourceName(url:string, locale:Locale) {
 }
 
 export function brandName(content:Content,locale:Locale){
- void content; void locale;
- return 'In The Loop';
+ const url=content.source_url||'';
+ let inferred='';
+ try{const host=new URL(url).hostname.toLowerCase();if(host==='xiaoyuzhoufm.com'||host.endsWith('.xiaoyuzhoufm.com'))inferred=locale==='zh'?'开始连接':'LinkStart';else if(host.includes('founderpark'))inferred='Founder Park';else if(host.includes('hardwire'))inferred='Hardwire';else if(host==='intheloop.geekpark.net')inferred='In The Loop';else if(host==='geekpark.net'||host.endsWith('.geekpark.net'))inferred='Geek Park'}catch{}
+ const account=(content.source_account||'').trim();
+ if(inferred&&(account===''||account==='In The Loop'))return inferred;
+ if(account){if(account.includes('开始连接')||account.toLowerCase().includes('linkstart'))return locale==='zh'?'开始连接':'LinkStart';return account}
+ return inferred||'In The Loop';
 }
 
 export function searchCatalogue(data:Catalogue,query:string,locale:Locale){

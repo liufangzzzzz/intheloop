@@ -62,6 +62,7 @@ export type Version = {
   title: string;
   summary: string;
   reading_hint?: string;
+  shownote?: string;
   body: string;
   destination?: "hosted" | "external";
   external_url?: string;
