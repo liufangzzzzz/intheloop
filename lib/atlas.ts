@@ -106,6 +106,7 @@ export type Content = {
 export type SpecialVersion = { title:string; description:string; html:string };
 export type SpecialPage = {
   id:string; revision:number; slug:string; date:string; layout:"wrapped"|"standalone";
+  include_header?:boolean; include_footer?:boolean;
   tag_ids:string[]; map_tag_id:string; english_enabled:boolean;
   versions:Partial<Record<Locale,SpecialVersion>>;
   published_at?:string;
